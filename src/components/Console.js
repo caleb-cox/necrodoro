@@ -4,15 +4,24 @@ import styled from 'styled-components';
 const Console = () => {
   const Wrapper = styled.div`
     height: 71px;
-    width: 100%;
-    margin: 4px 0;
+    margin: 4px;
     overflow-y: scroll;
+    box-sizing: content-box;
+
+    &::-webkit-scrollbar {
+      background-color: black;
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: white;
+    }
   `;
 
   const Message = styled.p`
     color: white;
-    margin: 4px;
-    padding: 0 12px;
+    margin: 4px 0;
+    padding-left: 12px;
     font-family: Monaco, Consolas, "Lucida Console", monospace;
     font-size: 10px;
     position: relative;
