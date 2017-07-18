@@ -1,9 +1,9 @@
 {
-  "name": "react-boilerplate",
+  "name": "necrodoro-timer",
   "version": "1.0.0",
-  "description": "Personal boilerplate for small React/Redux projects",
+  "description": "It's like a pomodoro timer, but also an arcane ritual.",
   "main": "index.js",
-  "repository": "git@github.com:calebcox725/react-boilerplate.git",
+  "repository": "git@github.com:calebcox725/necrodoro-timer.git",
   "author": "calebcox725",
   "license": "MIT",
   "scripts": {
