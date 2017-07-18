@@ -2,14 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const App = () => {
-  const GreenH1 = styled.h1`
-    color: green;
+  const Wrapper = styled.div`
+    height: 320px;
+    width: 320px;
+    border: 1px solid white;
+  `;
+
+  const Title = styled.h1`
+    color: red;
   `;
 
   return (
-    <div>
-      <GreenH1>Hello World</GreenH1>
-    </div>
+    <Wrapper>
+      <Title>Hello World</Title>
+    </Wrapper>
   );
 };
 
