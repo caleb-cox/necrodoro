@@ -7,8 +7,7 @@ const Console = () => {
     width: 100%;
     border-top: 1px dotted white;
     overflow-y: scroll;
-    position: absolute;
-    bottom: 0;
+    margin-bottom: 4px;
   `;
 
   const Message = styled.p`

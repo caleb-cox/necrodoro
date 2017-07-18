@@ -8,7 +8,6 @@ const App = () => {
     height: 320px;
     width: 320px;
     border: 1px dotted white;
-    position: relative;
   `;
 
   return (

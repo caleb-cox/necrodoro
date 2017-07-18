@@ -6,8 +6,6 @@ const Display = () => {
   const Wrapper = styled.div`
     height: 75%;
     width: 100%;
-    position: absolute;
-    top: 0;
     background-image: url(${background});
     background-position: center;
   `;
