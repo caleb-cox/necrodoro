@@ -3,23 +3,22 @@ import styled from 'styled-components';
 
 const Console = () => {
   const Wrapper = styled.div`
-    height: 25%;
+    height: 71px;
     width: 100%;
-    border-top: 1px dotted white;
+    margin: 4px 0;
     overflow-y: scroll;
-    margin-bottom: 4px;
   `;
 
   const Message = styled.p`
     color: white;
-    margin: 0.5em;
+    margin: 4px;
+    padding: 0 12px;
     font-family: Monaco, Consolas, "Lucida Console", monospace;
     font-size: 10px;
-    padding-left: 10px;
     position: relative;
 
     &::before {
-      content: '> ';
+      content: '>';
       position: absolute;
       left: 0;
     }
@@ -27,14 +26,30 @@ const Console = () => {
 
   return (
     <Wrapper>
-      <Message>Propane and propane accessories. Dang it Peggy. Buaaaaaaah.
-        I tell you what. Dang it Bobby. America, hooray, gosh darn it.</Message>
-      <Message>Propane and propane accessories. Dang it Peggy. Buaaaaaaah.
-        I tell you what. Dang it Bobby. America, hooray, gosh darn it.</Message>
-      <Message>Propane and propane accessories. Dang it Peggy. Buaaaaaaah.
-        I tell you what. Dang it Bobby. America, hooray, gosh darn it.</Message>
-      <Message>Propane and propane accessories. Dang it Peggy. Buaaaaaaah.
-        I tell you what. Dang it Bobby. America, hooray, gosh darn it.</Message>
+      <Message>
+        Propane and propane accessories. Dang it Peggy.
+        Buaaaaaaah. I tell you what. Dang it Bobby.
+        America, hooray, gosh darn it. Lorem ipsum I
+        tell you what. I love Texas. Lol. Jabroni.
+      </Message>
+      <Message>
+        Propane and propane accessories. Dang it Peggy.
+        Buaaaaaaah. I tell you what. Dang it Bobby.
+        America, hooray, gosh darn it. Lorem ipsum I
+        tell you what. I love Texas. Lol. Jabroni.
+      </Message>
+      <Message>
+        Propane and propane accessories. Dang it Peggy.
+        Buaaaaaaah. I tell you what. Dang it Bobby.
+        America, hooray, gosh darn it. Lorem ipsum I
+        tell you what. I love Texas. Lol. Jabroni.
+      </Message>
+      <Message>
+        Propane and propane accessories. Dang it Peggy.
+        Buaaaaaaah. I tell you what. Dang it Bobby.
+        America, hooray, gosh darn it. Lorem ipsum I
+        tell you what. I love Texas. Lol. Jabroni.
+      </Message>
     </Wrapper>
   );
 };
