@@ -1,2 +1,2 @@
-# react-boilerplate
-Personal boilerplate for small React/Redux projects
+# necrodoro-timer
+It's like a pomodoro timer, but also an arcane ritual.
