@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import tempImage from '../temp.png';
+import background from '../assets/background.png';
 
 const Display = () => {
   const Wrapper = styled.div`
@@ -8,7 +8,7 @@ const Display = () => {
     width: 100%;
     position: absolute;
     top: 0;
-    background-image: url(${tempImage});
+    background-image: url(${background});
     background-position: center;
   `;
 
