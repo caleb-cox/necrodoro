@@ -28,10 +28,14 @@ const Console = () => {
 
   return (
     <Wrapper>
-      <Message>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dang it Bobby.</Message>
-      <Message>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dang it Bobby.</Message>
-      <Message>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dang it Bobby.</Message>
-      <Message>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dang it Bobby.</Message>
+      <Message>Propane and propane accessories. Dang it Peggy. Buaaaaaaah.
+        I tell you what. Dang it Bobby. America, hooray, gosh darn it.</Message>
+      <Message>Propane and propane accessories. Dang it Peggy. Buaaaaaaah.
+        I tell you what. Dang it Bobby. America, hooray, gosh darn it.</Message>
+      <Message>Propane and propane accessories. Dang it Peggy. Buaaaaaaah.
+        I tell you what. Dang it Bobby. America, hooray, gosh darn it.</Message>
+      <Message>Propane and propane accessories. Dang it Peggy. Buaaaaaaah.
+        I tell you what. Dang it Bobby. America, hooray, gosh darn it.</Message>
     </Wrapper>
   );
 };

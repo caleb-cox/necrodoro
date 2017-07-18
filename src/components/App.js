@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Display from './Display';
 import Console from './Console';
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
 
   return (
     <Wrapper>
+      <Display />
       <Console />
     </Wrapper>
   );
