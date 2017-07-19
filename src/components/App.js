@@ -7,7 +7,7 @@ const App = () => {
   const Wrapper = styled.div`
     height: 320px;
     width: 320px;
-    border: 1px dashed white;
+    border: 1px solid white;
   `;
 
   return (
