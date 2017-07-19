@@ -25,6 +25,10 @@ const CandleFlame = (props) => {
     animation: ${flicker} 250ms infinite alternate steps(3);
   `;
 
+  if (!props.visible) {
+    return null;
+  }
+
   return (
     <Wrapper />
   );
