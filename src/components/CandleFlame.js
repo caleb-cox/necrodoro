@@ -1,8 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import candleFlame from '../assets/candle-flame.png';
 
 const CandleFlame = (props) => {
+  const flicker = keyframes`
+    from {
+      transform: translateX(1px);
+    }
+
+    to {
+      transform: translateX(-1px);
+    }
+  `;
+
   const Wrapper = styled.div`
     height: 19px;
     width: 9px;
@@ -12,6 +22,7 @@ const CandleFlame = (props) => {
     position: absolute;
     left: ${props.position.x}px;
     top: ${props.position.y}px;
+    animation: ${flicker} 250ms infinite alternate steps(3);
   `;
 
   return (
