@@ -22,6 +22,7 @@ class Display extends React.Component {
       background-clip: content-box;
       border-bottom: 1px dashed white;
       position: relative;
+      image-rendering: pixelated;
     `;
 
     return (
@@ -33,6 +34,6 @@ class Display extends React.Component {
       </Wrapper>
     );
   }
-};
+}
 
 export default Display;

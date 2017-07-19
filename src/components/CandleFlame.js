@@ -18,11 +18,11 @@ const CandleFlame = (props) => {
     width: 9px;
     background-image: url(${candleFlame});
     background-position: center;
-    background-clip: content-box;
     position: absolute;
     left: ${props.position.x}px;
     top: ${props.position.y}px;
-    animation: ${flicker} 250ms infinite alternate steps(3);
+    animation: ${flicker} 250ms infinite alternate steps(4);
+    image-rendering: pixelated;
   `;
 
   if (!props.visible) {
