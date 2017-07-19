@@ -10,7 +10,7 @@ const Display = () => {
     background-image: url(${background});
     background-position: center;
     background-clip: content-box;
-    border-bottom: 1px dotted white;
+    border-bottom: 1px dashed white;
     position: relative;
   `;
 
