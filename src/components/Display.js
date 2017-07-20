@@ -33,10 +33,10 @@ class Display extends React.Component {
     return (
       <DisplayWrapper>
         <Popup popupType={popupType} />
-        <CandleFlame visible={litCandles >= 1} position={{ x: 19, y: 136 }} />
-        <CandleFlame visible={litCandles >= 3} position={{ x: 52, y: 108 }} />
-        <CandleFlame visible={litCandles >= 4} position={{ x: 260, y: 106 }} />
-        <CandleFlame visible={litCandles >= 2} position={{ x: 291, y: 134 }} />
+        <CandleFlame visible={litCandles >= 1} position={{ x: 19, y: 137 }} />
+        <CandleFlame visible={litCandles >= 3} position={{ x: 52, y: 109 }} />
+        <CandleFlame visible={litCandles >= 4} position={{ x: 260, y: 107 }} />
+        <CandleFlame visible={litCandles >= 2} position={{ x: 291, y: 135 }} />
       </DisplayWrapper>
     );
   }
