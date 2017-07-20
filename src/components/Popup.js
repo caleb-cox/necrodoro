@@ -41,7 +41,7 @@ const Popup = (props) => {
     case 'debugTimer': {
       return (
         <Wrapper>
-          <Timer minutes={0} seconds={10} />
+          <Timer minutes={5} seconds={0} />
         </Wrapper>
       );
     }

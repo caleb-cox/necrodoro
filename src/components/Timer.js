@@ -24,7 +24,7 @@ class Timer extends React.Component {
       secRemaining %= 60;
 
       this.setState({ minRemaining, secRemaining });
-      if (secRemaining <= 0) clearInterval(this.state.intervalId);
+      if (secElapsed >= this.state.secDuration) clearInterval(this.state.intervalId);
     };
 
     this.state.intervalId = setInterval(timer, 250);
