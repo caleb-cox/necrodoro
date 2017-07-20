@@ -5,16 +5,15 @@ import CandleFlame from './CandleFlame';
 import Popup from './Popup';
 
 class Display extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       litCandles: 4,
+      popupType: 'bobby',
     };
   }
 
   render() {
-    const litCandles = this.state.litCandles;
-
     const Wrapper = styled.div`
       height: 238px;
       width: 100%;
@@ -28,9 +27,12 @@ class Display extends React.Component {
       image-rendering: pixelated;
     `;
 
+    const popupType = this.state.popupType;
+    const litCandles = this.state.litCandles;
+
     return (
       <Wrapper>
-        <Popup popupType={'bobby'} />
+        <Popup popupType={popupType} />
         <CandleFlame visible={litCandles >= 1} position={{ x: 19, y: 136 }} />
         <CandleFlame visible={litCandles >= 3} position={{ x: 52, y: 108 }} />
         <CandleFlame visible={litCandles >= 4} position={{ x: 260, y: 106 }} />
