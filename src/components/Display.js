@@ -22,7 +22,7 @@ class Display extends React.Component {
     super(props);
     this.state = {
       litCandles: 4,
-      popupType: 'debugTimer',
+      popupType: 'debugButtons',
     };
   }
 

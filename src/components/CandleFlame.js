@@ -23,6 +23,7 @@ const CandleFlame = (props) => {
     top: ${props.position.y}px;
     animation: ${flickerAnimation} 250ms infinite alternate steps(2, start);
     image-rendering: pixelated;
+    z-index: 1;
   `;
 
   if (!props.visible) {

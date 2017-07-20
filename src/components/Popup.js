@@ -1,15 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import Timer from './Timer';
+import PopupButton from './PopupButton';
 
 const PopupWrapper = styled.div`
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 75%;
+  max-height: 75%;
   overflow: hidden;
   background-color: black;
   padding: 12px;
   border: 1px solid white;
   box-shadow: 0 0 0 2px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 `;
 
 const Popup = (props) => {
@@ -40,6 +46,16 @@ const Popup = (props) => {
       return (
         <PopupWrapper>
           <Timer minutes={1} seconds={0} />
+        </PopupWrapper>
+      );
+    }
+    case 'debugButtons': {
+      return (
+        <PopupWrapper>
+          <PopupButton onClick={console.log} text={'begin the ritual of krobnar'} />
+          <PopupButton onClick={console.log} text={'consume the eye of the rabbit'} />
+          <PopupButton onClick={console.log} text={'bleed into the silver goblet'} />
+          <PopupButton onClick={console.log} text={'gleam the puzzle cube'} />
         </PopupWrapper>
       );
     }
