@@ -4,7 +4,7 @@ import candleFlame from '../assets/candle-flame.png';
 
 const flickerAnimation = keyframes`
   from {
-    transform: translateX(0px);
+    transform: translateX(1px);
   }
 
   to {
@@ -21,7 +21,7 @@ const CandleFlame = (props) => {
     position: absolute;
     left: ${props.position.x}px;
     top: ${props.position.y}px;
-    animation: ${flickerAnimation} 250ms infinite alternate steps(2);
+    animation: ${flickerAnimation} 250ms infinite alternate steps(2, start);
     image-rendering: pixelated;
   `;
 
