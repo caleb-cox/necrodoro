@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Timer from './Timer';
 
 const Popup = (props) => {
   const Wrapper = styled.div`
@@ -10,6 +11,8 @@ const Popup = (props) => {
     padding: 12px;
     border: 1px solid white;
     box-shadow: 0 0 0 2px black;
+    font-size: 4em;
+    line-height: 1em;
   `;
 
   switch (props.popupType) {
@@ -18,6 +21,27 @@ const Popup = (props) => {
       return (
         <Wrapper>
           {Lorem}
+        </Wrapper>
+      );
+    }
+    case 'shortTimer': {
+      return (
+        <Wrapper>
+          <Timer minutes={5} seconds={0} />
+        </Wrapper>
+      );
+    }
+    case 'longTimer': {
+      return (
+        <Wrapper>
+          <Timer minutes={25} seconds={0} />
+        </Wrapper>
+      );
+    }
+    case 'debugTimer': {
+      return (
+        <Wrapper>
+          <Timer minutes={0} seconds={10} />
         </Wrapper>
       );
     }
