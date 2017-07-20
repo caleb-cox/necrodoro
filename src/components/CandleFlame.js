@@ -4,7 +4,7 @@ import candleFlame from '../assets/candle-flame.png';
 
 const flickerAnimation = keyframes`
   from {
-    transform: translateX(1px);
+    transform: translateX(0px);
   }
 
   to {
