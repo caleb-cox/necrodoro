@@ -51,7 +51,7 @@ class Console extends React.Component {
       &::before {
         content: '>';
         position: absolute;
-        left: 0;
+        left: 2px;
       }
     `;
 
