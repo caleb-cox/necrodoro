@@ -15,10 +15,10 @@ class Display extends React.Component {
 
   render() {
     const Wrapper = styled.div`
-      height: 238px;
+      height: 239px;
       width: 100%;
       background-image: url(${background});
-      background-position: center;
+      background-position: bottom;
       background-clip: content-box;
       position: relative;
       display: flex;

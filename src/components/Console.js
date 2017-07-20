@@ -29,7 +29,7 @@ class Console extends React.Component {
 
   render() {
     const Wrapper = styled.div`
-      height: 72px;
+      height: 71px;
       margin: 4px;
       overflow-y: scroll;
       box-sizing: content-box;
