@@ -1,4 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const TimerWrapper = styled.div`
+  font-size: 4em;
+  line-height: 1em;
+`;
 
 class Timer extends React.Component {
   constructor(props) {
@@ -12,18 +18,16 @@ class Timer extends React.Component {
   }
 
   componentDidMount() {
-    const msStart = new Date().getTime();
+    const start = new Date().getTime();
 
     const timer = () => {
-      const msNow = new Date().getTime();
-
-      const secElapsed = Math.floor((msNow - msStart) / 1000);
+      const secElapsed = Math.floor((new Date().getTime() - start) / 1000);
       let secRemaining = this.state.secDuration - secElapsed;
-
       const minRemaining = Math.floor(secRemaining / 60);
-      secRemaining %= 60;
 
+      secRemaining %= 60;
       this.setState({ minRemaining, secRemaining });
+
       if (secElapsed >= this.state.secDuration) clearInterval(this.state.intervalId);
     };
 
@@ -46,9 +50,9 @@ class Timer extends React.Component {
     const secString = timeNumToString(this.state.secRemaining);
 
     return (
-      <div>
+      <TimerWrapper>
         {minString}:{secString}
-      </div>
+      </TimerWrapper>
     );
   }
 }

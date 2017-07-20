@@ -2,6 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import Message from './Message';
 
+const ConsoleWrapper = styled.div`
+  height: 71px;
+  margin: 4px;
+  overflow-y: scroll;
+  box-sizing: content-box;
+
+  &::-webkit-scrollbar {
+    background-color: black;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: white;
+  }
+`;
+
 class Console extends React.Component {
   constructor(props) {
     super(props);
@@ -28,22 +44,6 @@ class Console extends React.Component {
   }
 
   render() {
-    const Wrapper = styled.div`
-      height: 71px;
-      margin: 4px;
-      overflow-y: scroll;
-      box-sizing: content-box;
-
-      &::-webkit-scrollbar {
-        background-color: black;
-        width: 8px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: white;
-      }
-    `;
-
     const messages = this.state.messages.map(message => (
       <Message key={Math.random()}>
         {message}
@@ -51,9 +51,9 @@ class Console extends React.Component {
     ));
 
     return (
-      <Wrapper innerRef={(node) => { this.node = node; }}>
+      <ConsoleWrapper innerRef={(node) => { this.node = node; }}>
         {messages}
-      </Wrapper>
+      </ConsoleWrapper>
     );
   }
 }
