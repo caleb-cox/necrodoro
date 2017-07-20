@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 class Console extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       messages: [
         'Propane and propane accessories. Dang it Peggy. Buaaaaaaah. I tell you what. Dang it Bobby. America, hooray, gosh darn it. Lorem ipsum I tell you what. I love Texas. Lol. Jabroni.',
@@ -44,11 +44,8 @@ class Console extends React.Component {
     `;
 
     const Message = styled.p`
-      color: white;
       margin: 4px 0;
       padding-left: 12px;
-      font-family: Monaco, Consolas, "Lucida Console", monospace;
-      font-size: 10px;
       position: relative;
 
       &::before {

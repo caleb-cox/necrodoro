@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import background from '../assets/background.png';
 import CandleFlame from './CandleFlame';
+import Popup from './Popup';
 
 class Display extends React.Component {
   constructor() {
@@ -15,18 +16,21 @@ class Display extends React.Component {
     const litCandles = this.state.litCandles;
 
     const Wrapper = styled.div`
-      height: 239px;
+      height: 238px;
       width: 100%;
       background-image: url(${background});
       background-position: center;
       background-clip: content-box;
-      border-bottom: 1px dashed white;
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       image-rendering: pixelated;
     `;
 
     return (
       <Wrapper>
+        <Popup popupType={'bobby'} />
         <CandleFlame visible={litCandles >= 1} position={{ x: 19, y: 136 }} />
         <CandleFlame visible={litCandles >= 3} position={{ x: 52, y: 108 }} />
         <CandleFlame visible={litCandles >= 4} position={{ x: 260, y: 106 }} />

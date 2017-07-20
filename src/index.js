@@ -13,6 +13,9 @@ injectGlobal`
     justify-content: center;
     align-items: center;
     background-color: black;
+    font-family: Monaco, Consolas, "Lucida Console", monospace;
+    font-size: 10px;
+    color: white;
   }
 `;
 

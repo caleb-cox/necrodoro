@@ -21,7 +21,7 @@ const CandleFlame = (props) => {
     position: absolute;
     left: ${props.position.x}px;
     top: ${props.position.y}px;
-    animation: ${flicker} 250ms infinite alternate steps(4);
+    animation: ${flicker} 250ms infinite alternate steps(2);
     image-rendering: pixelated;
   `;
 
