@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const PopupButtonWrapper = styled.button`
   width: 100%;
   margin: 2px;
+  padding: 8px;
   border: 1px solid white;
   font-family: 'Nova Mono', monospace;
   text-transform: uppercase;
