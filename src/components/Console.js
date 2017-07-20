@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Message from './Message';
 
 class Console extends React.Component {
   constructor(props) {
@@ -40,18 +41,6 @@ class Console extends React.Component {
 
       &::-webkit-scrollbar-thumb {
         background-color: white;
-      }
-    `;
-
-    const Message = styled.p`
-      margin: 4px 0;
-      padding-left: 12px;
-      position: relative;
-
-      &::before {
-        content: '>';
-        position: absolute;
-        left: 2px;
       }
     `;
 
