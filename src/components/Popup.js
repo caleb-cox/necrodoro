@@ -41,9 +41,9 @@ const Popup = (props) => {
     case 'debugButtons': {
       return (
         <PopupWrapper>
-          <Timer minutes={25} seconds={0} />
+          <Timer minutes={1} seconds={10} />
           <PopupButton onClick={buttonTest} text={'begin the ritual'} />
-          <PopupButton onClick={buttonTest} text={'eat rotten rabbit eye'} />
+          <PopupButton onClick={buttonTest} text={'eat rabbit eye'} />
           <PopupButton onClick={buttonTest} text={'spill goat blood'} />
         </PopupWrapper>
       );

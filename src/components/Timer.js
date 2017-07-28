@@ -8,6 +8,9 @@ const TimerWrapper = styled.div`
   margin: 4px;
 `;
 
+const scream = new Audio(howie);
+scream.volume = 0.5;
+
 class Timer extends React.Component {
   constructor(props) {
     super(props);
@@ -16,10 +19,7 @@ class Timer extends React.Component {
       secDuration: ((props.minutes * 60) + props.seconds),
       minRemaining: props.minutes,
       secRemaining: props.seconds,
-      scream: new Audio(howie),
     };
-
-    this.state.scream.volume = 0.5;
   }
 
   componentDidMount() {
@@ -35,7 +35,7 @@ class Timer extends React.Component {
 
       if (secElapsed >= this.state.secDuration) {
         clearInterval(this.state.intervalId);
-        this.state.scream.play();
+        scream.play();
         // Dispatch the end-of-timer action
       }
     };
@@ -51,7 +51,7 @@ class Timer extends React.Component {
     const timeNumToString = (n) => {
       let numString = n < 10 ? `0${n}` : `${n}`;
 
-      if (numString === '60') numString = '00';
+      if (n === 60 || n < 0) numString = '00';
       return numString;
     };
 
