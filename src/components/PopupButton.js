@@ -11,7 +11,8 @@ const PopupButtonWrapper = styled.button`
   text-transform: uppercase;
   outline: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: white;
     color: black;
   }

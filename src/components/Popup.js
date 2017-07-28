@@ -20,14 +20,6 @@ const PopupWrapper = styled.div`
 
 const Popup = (props) => {
   switch (props.popupType) {
-    case 'lorem': {
-      const Lorem = 'Propane and propane accessories. Dang it Peggy. Buaaaaaaah. I tell you what. Dang it Bobby. America, hooray, gosh darn it. Lorem ipsum I tell you what. I love Texas. Lol. Jabroni.';
-      return (
-        <PopupWrapper>
-          {Lorem}
-        </PopupWrapper>
-      );
-    }
     case 'shortTimer': {
       return (
         <PopupWrapper>
@@ -39,13 +31,6 @@ const Popup = (props) => {
       return (
         <PopupWrapper>
           <Timer minutes={25} seconds={0} />
-        </PopupWrapper>
-      );
-    }
-    case 'debugTimer': {
-      return (
-        <PopupWrapper>
-          <Timer minutes={1} seconds={0} />
         </PopupWrapper>
       );
     }
