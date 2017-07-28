@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import example from './example';
+import timer from './timer';
+import popup from './popup';
 
-const rootReducer = combineReducers({ example });
+const rootReducer = combineReducers({ timer, popup });
 
 export default rootReducer;

@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import timerActions from '../actions/timer';
 import howie from '../assets/howie.ogg';
 
 const TimerWrapper = styled.div`
@@ -16,9 +19,9 @@ class Timer extends React.Component {
     super(props);
 
     this.state = {
-      secDuration: ((props.minutes * 60) + props.seconds),
-      minRemaining: props.minutes,
-      secRemaining: props.seconds,
+      minRemaining: props.duration,
+      secRemaining: 0,
+      secDuration: (props.duration * 60),
     };
   }
 
@@ -36,7 +39,7 @@ class Timer extends React.Component {
       if (secElapsed >= this.state.secDuration) {
         clearInterval(this.state.intervalId);
         scream.play();
-        // Dispatch the end-of-timer action
+        this.props.endTimer(this.props.type, this.props.timersCompleted);
       }
     };
 
@@ -66,4 +69,18 @@ class Timer extends React.Component {
   }
 }
 
-export default Timer;
+function mapStateToProps(state) {
+  return {
+    duration: state.timer.duration,
+    type: state.timer.timerType,
+    timersCompleted: state.timer.timersCompleted,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    endTimer: timerActions.endTimer,
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Timer);

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import background from '../assets/background.png';
 import CandleFlame from './CandleFlame';
 import Popup from './Popup';
@@ -17,29 +18,32 @@ const DisplayWrapper = styled.div`
   image-rendering: pixelated;
 `;
 
-class Display extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      litCandles: 4,
-      popupType: 'debugButtons',
-    };
-  }
+const Display = props => (
+  <DisplayWrapper>
+    <Popup />
+    <CandleFlame
+      visible={props.litCandles >= 1}
+      position={{ x: 19, y: 137 }}
+    />
+    <CandleFlame
+      visible={props.litCandles >= 2}
+      position={{ x: 291, y: 135 }}
+    />
+    <CandleFlame
+      visible={props.litCandles >= 3}
+      position={{ x: 52, y: 109 }}
+    />
+    <CandleFlame
+      visible={props.litCandles >= 4}
+      position={{ x: 260, y: 107 }}
+    />
+  </DisplayWrapper>
+);
 
-  render() {
-    const popupType = this.state.popupType;
-    const litCandles = this.state.litCandles;
-
-    return (
-      <DisplayWrapper>
-        <Popup popupType={popupType} />
-        <CandleFlame visible={litCandles >= 1} position={{ x: 19, y: 137 }} />
-        <CandleFlame visible={litCandles >= 3} position={{ x: 52, y: 109 }} />
-        <CandleFlame visible={litCandles >= 4} position={{ x: 260, y: 107 }} />
-        <CandleFlame visible={litCandles >= 2} position={{ x: 291, y: 135 }} />
-      </DisplayWrapper>
-    );
-  }
+function mapStateToProps(state) {
+  return {
+    litCandles: state.timer.timersCompleted,
+  };
 }
 
-export default Display;
+export default connect(mapStateToProps)(Display);

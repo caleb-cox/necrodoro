@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Timer from './Timer';
 import PopupButton from './PopupButton';
+import timerActions from '../actions/timer';
 
 const PopupWrapper = styled.div`
   max-width: 60%;
@@ -19,32 +22,31 @@ const PopupWrapper = styled.div`
 `;
 
 const Popup = (props) => {
-  function buttonTest() {
-    console.log('hey');
-  }
-
-  switch (props.popupType) {
-    case 'shortTimer': {
+  switch (props.type) {
+    case 'initial': {
       return (
         <PopupWrapper>
-          <Timer minutes={5} seconds={0} />
+          <PopupButton
+            onClick={props.startTimer}
+            text={'begin the ritual'}
+          />
         </PopupWrapper>
       );
     }
-    case 'longTimer': {
+    case 'timer': {
       return (
         <PopupWrapper>
-          <Timer minutes={25} seconds={0} />
+          <Timer />
         </PopupWrapper>
       );
     }
-    case 'debugButtons': {
+    case 'wait': {
       return (
         <PopupWrapper>
-          <Timer minutes={1} seconds={10} />
-          <PopupButton onClick={buttonTest} text={'begin the ritual'} />
-          <PopupButton onClick={buttonTest} text={'eat rabbit eye'} />
-          <PopupButton onClick={buttonTest} text={'spill goat blood'} />
+          <PopupButton
+            onClick={props.startTimer}
+            text={'continue the ritual'}
+          />
         </PopupWrapper>
       );
     }
@@ -54,4 +56,16 @@ const Popup = (props) => {
   }
 };
 
-export default Popup;
+function mapStateToProps(state) {
+  return {
+    type: state.popup.popupType,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    startTimer: timerActions.startTimer,
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Popup);
