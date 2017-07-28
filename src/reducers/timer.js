@@ -9,10 +9,13 @@ const initialState = {
 export default function example(state = initialState, action) {
   switch (action.type) {
     case START_TIMER: {
+      const resetTimer = (
+        state.timersCompleted === 4
+        && state.timerType === 'long'
+      );
+
       return Object.assign({}, state, {
-        timersCompleted: state.timersCompleted === 4 && state.timerType === 'long'
-          ? 0
-          : state.timersCompleted,
+        timersCompleted: resetTimer ? 0 : state.timersCompleted,
       });
     }
     case END_TIMER: {
