@@ -33,6 +33,12 @@ module.exports = {
           'url-loader',
         ],
       },
+      {
+        test: /\.ogg$/,
+        use: [
+          'url-loader',
+        ],
+      },
     ],
   },
   devtool: 'cheap-module-eval-source-map',

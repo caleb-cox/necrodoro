@@ -25,7 +25,7 @@ const PopupButtonWrapper = styled.button`
 const PopupButton = (props) => {
   const handleClick = (e) => {
     e.preventDefault();
-    props.onClick('hey');
+    props.onClick();
   };
 
   return (

@@ -4,8 +4,8 @@ import Timer from './Timer';
 import PopupButton from './PopupButton';
 
 const PopupWrapper = styled.div`
-  max-width: 75%;
-  max-height: 75%;
+  max-width: 60%;
+  max-height: 80%;
   overflow: hidden;
   background-color: black;
   padding: 12px;
@@ -19,6 +19,10 @@ const PopupWrapper = styled.div`
 `;
 
 const Popup = (props) => {
+  function buttonTest() {
+    console.log('hey');
+  }
+
   switch (props.popupType) {
     case 'shortTimer': {
       return (
@@ -37,10 +41,10 @@ const Popup = (props) => {
     case 'debugButtons': {
       return (
         <PopupWrapper>
-          <PopupButton onClick={console.log} text={'begin the ritual of krobnar'} />
-          <PopupButton onClick={console.log} text={'consume the eye of the rabbit'} />
-          <PopupButton onClick={console.log} text={'bleed into the silver goblet'} />
-          <PopupButton onClick={console.log} text={'gleam the puzzle cube'} />
+          <Timer minutes={25} seconds={0} />
+          <PopupButton onClick={buttonTest} text={'begin the ritual'} />
+          <PopupButton onClick={buttonTest} text={'eat rotten rabbit eye'} />
+          <PopupButton onClick={buttonTest} text={'spill goat blood'} />
         </PopupWrapper>
       );
     }

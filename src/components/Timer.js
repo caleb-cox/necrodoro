@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import howie from '../assets/howie.ogg';
 
 const TimerWrapper = styled.div`
   font-size: 4em;
   line-height: 1em;
+  margin: 4px;
 `;
 
 class Timer extends React.Component {
@@ -14,7 +16,10 @@ class Timer extends React.Component {
       secDuration: ((props.minutes * 60) + props.seconds),
       minRemaining: props.minutes,
       secRemaining: props.seconds,
+      scream: new Audio(howie),
     };
+
+    this.state.scream.volume = 0.5;
   }
 
   componentDidMount() {
@@ -30,6 +35,7 @@ class Timer extends React.Component {
 
       if (secElapsed >= this.state.secDuration) {
         clearInterval(this.state.intervalId);
+        this.state.scream.play();
         // Dispatch the end-of-timer action
       }
     };
