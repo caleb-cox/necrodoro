@@ -1,25 +1,15 @@
-import { START_TIMER, END_TIMER } from '../actions/timer';
+import { SET_NEXT_TIMER, LONG_TIMER_DURATION } from '../actions/timer';
 
 const initialState = {
-  timerType: 'long',
-  duration: 25,
-  timersCompleted: 0,
+  litCandles: 0,
+  timerId: 1,
+  duration: LONG_TIMER_DURATION,
 };
 
 export default function example(state = initialState, action) {
   switch (action.type) {
-    case START_TIMER: {
-      const resetTimer = (
-        state.timersCompleted === 4
-        && state.timerType === 'long'
-      );
-
-      return Object.assign({}, state, {
-        timersCompleted: resetTimer ? 0 : state.timersCompleted,
-      });
-    }
-    case END_TIMER: {
-      return Object.assign({}, state, action.newTimerState);
+    case SET_NEXT_TIMER: {
+      return Object.assign({}, state, action.nextTimerState);
     }
     default:
       return state;

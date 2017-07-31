@@ -39,7 +39,7 @@ class Timer extends React.Component {
       if (secElapsed >= this.state.secDuration) {
         clearInterval(this.state.intervalId);
         scream.play();
-        this.props.endTimer(this.props.type, this.props.timersCompleted);
+        this.props.setNextTimer(this.props.timerId);
       }
     };
 
@@ -72,14 +72,13 @@ class Timer extends React.Component {
 function mapStateToProps(state) {
   return {
     duration: state.timer.duration,
-    type: state.timer.timerType,
-    timersCompleted: state.timer.timersCompleted,
+    timerId: state.timer.timerId,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    endTimer: timerActions.endTimer,
+    setNextTimer: timerActions.setNextTimer,
   }, dispatch);
 }
 

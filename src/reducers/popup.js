@@ -1,4 +1,4 @@
-import { START_TIMER, END_TIMER } from '../actions/timer';
+import { SET_NEXT_TIMER, START_NEXT_TIMER } from '../actions/timer';
 
 const initialState = {
   popupType: 'initial',
@@ -6,14 +6,14 @@ const initialState = {
 
 export default function example(state = initialState, action) {
   switch (action.type) {
-    case START_TIMER: {
-      return Object.assign({}, state, {
-        popupType: 'timer',
-      });
-    }
-    case END_TIMER: {
+    case SET_NEXT_TIMER: {
       return Object.assign({}, state, {
         popupType: 'wait',
+      });
+    }
+    case START_NEXT_TIMER: {
+      return Object.assign({}, state, {
+        popupType: 'timer',
       });
     }
     default:

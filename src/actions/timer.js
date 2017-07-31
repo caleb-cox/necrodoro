@@ -1,34 +1,36 @@
-export const START_TIMER = 'START_TIMER';
-export const END_TIMER = 'END_TIMER';
+export const SET_NEXT_TIMER = 'SET_NEXT_TIMER';
+export const START_NEXT_TIMER = 'START_NEXT_TIMER';
+
+export const SHORT_TIMER_DURATION = 5;
+export const MEDIUM_TIMER_DURATION = 15;
+export const LONG_TIMER_DURATION = 25;
 
 const timerActions = {
-  startTimer: () => ({
-    type: START_TIMER,
-  }),
-  endTimer: (lastTimerType, timersCompleted) => {
-    let newTimerType;
-    let newDuration;
-    let newTimersCompleted;
+  setNextTimer: (timerId) => {
+    const nextLitCandles = Math.ceil((timerId % 8) / 2);
+    const nextTimerId = timerId + 1;
 
-    if (lastTimerType === 'long') {
-      newTimersCompleted = timersCompleted + 1;
-      newTimerType = newTimersCompleted === 4 ? 'medium' : 'short';
-      newDuration = newTimersCompleted === 4 ? 15 : 5;
+    let nextDuration;
+    if (nextTimerId % 8 === 0) {
+      nextDuration = MEDIUM_TIMER_DURATION;
+    } else if (nextTimerId % 2 === 0) {
+      nextDuration = SHORT_TIMER_DURATION;
     } else {
-      newTimerType = 'long';
-      newDuration = 25;
-      newTimersCompleted = timersCompleted;
+      nextDuration = LONG_TIMER_DURATION;
     }
 
     return {
-      type: END_TIMER,
-      newTimerState: {
-        timerType: newTimerType,
-        duration: newDuration,
-        timersCompleted: newTimersCompleted,
+      type: SET_NEXT_TIMER,
+      nextTimerState: {
+        duration: nextDuration,
+        timerId: nextTimerId,
+        litCandles: nextLitCandles,
       },
     };
   },
+  startNextTimer: () => ({
+    type: START_NEXT_TIMER,
+  }),
 };
 
 export default timerActions;

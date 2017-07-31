@@ -42,7 +42,7 @@ const Display = props => (
 
 function mapStateToProps(state) {
   return {
-    litCandles: state.timer.timersCompleted,
+    litCandles: state.timer.litCandles,
   };
 }
 

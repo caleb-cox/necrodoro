@@ -27,7 +27,7 @@ const Popup = (props) => {
       return (
         <PopupWrapper>
           <PopupButton
-            onClick={props.startTimer}
+            onClick={props.startNextTimer}
             text={'begin the ritual'}
           />
         </PopupWrapper>
@@ -44,7 +44,7 @@ const Popup = (props) => {
       return (
         <PopupWrapper>
           <PopupButton
-            onClick={props.startTimer}
+            onClick={props.startNextTimer}
             text={'continue the ritual'}
           />
         </PopupWrapper>
@@ -64,7 +64,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    startTimer: timerActions.startTimer,
+    startNextTimer: timerActions.startNextTimer,
   }, dispatch);
 }
 
