@@ -8,7 +8,6 @@ const PopupButtonWrapper = styled.button`
   border: 1px solid white;
   font-family: 'Nova Mono', monospace;
   line-height: 1em;
-  text-transform: uppercase;
   outline: none;
 
   &:hover,

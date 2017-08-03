@@ -24,7 +24,6 @@ class Console extends React.Component {
     this.state = {
       messages: [
         'The black altar awaits...',
-        'You light the first candle. The room feels colder. A wave of nausea washes over you.',
       ],
     };
   }

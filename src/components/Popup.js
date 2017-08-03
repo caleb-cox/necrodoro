@@ -7,11 +7,11 @@ import PopupButton from './PopupButton';
 import timerActions from '../actions/timer';
 
 const PopupWrapper = styled.div`
-  max-width: 60%;
-  max-height: 80%;
+  max-width: 190px;
+  max-height: 190px;
   overflow: hidden;
   background-color: black;
-  padding: 12px;
+  padding: 8px;
   border: 1px solid white;
   box-shadow: 0 0 0 2px black;
   display: flex;
@@ -21,6 +21,11 @@ const PopupWrapper = styled.div`
   z-index: 2;
 `;
 
+const MenuTitle = styled.div`
+  margin: 4px;
+  text-transform: uppercase;
+`;
+
 const Popup = (props) => {
   switch (props.type) {
     case 'initial': {
@@ -28,7 +33,7 @@ const Popup = (props) => {
         <PopupWrapper>
           <PopupButton
             onClick={props.startNextTimer}
-            text={'begin the ritual'}
+            text={'Begin the Ritual'}
           />
         </PopupWrapper>
       );
@@ -45,7 +50,32 @@ const Popup = (props) => {
         <PopupWrapper>
           <PopupButton
             onClick={props.startNextTimer}
-            text={'continue the ritual'}
+            text={'Continue the Ritual'}
+          />
+        </PopupWrapper>
+      );
+    }
+    case 'debug': {
+      return (
+        <PopupWrapper>
+          <MenuTitle>
+            Choose Your Invocation:
+          </MenuTitle>
+          <PopupButton
+            onClick={null}
+            text={'Mammon, The Golden Wolf'}
+          />
+          <PopupButton
+            onClick={null}
+            text={'Beelzebub, Lord of Flies'}
+          />
+          <PopupButton
+            onClick={null}
+            text={'Hankhill, Asst. Manager'}
+          />
+          <PopupButton
+            onClick={null}
+            text={'Asmodeus, King of Demons'}
           />
         </PopupWrapper>
       );
