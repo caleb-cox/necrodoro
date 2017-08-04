@@ -7,11 +7,11 @@ import PopupButton from './PopupButton';
 import timerActions from '../actions/timer';
 
 const PopupWrapper = styled.div`
-  max-width: 190px;
-  max-height: 190px;
+  max-width: 200px;
+  max-height: 200px;
   overflow: hidden;
   background-color: black;
-  padding: 8px;
+  padding: 12px;
   border: 1px solid white;
   box-shadow: 0 0 0 2px black;
   display: flex;
@@ -19,11 +19,6 @@ const PopupWrapper = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 2;
-`;
-
-const MenuTitle = styled.div`
-  margin: 4px;
-  text-transform: uppercase;
 `;
 
 const Popup = (props) => {
@@ -51,31 +46,6 @@ const Popup = (props) => {
           <PopupButton
             onClick={props.startNextTimer}
             text={'Continue the Ritual'}
-          />
-        </PopupWrapper>
-      );
-    }
-    case 'debug': {
-      return (
-        <PopupWrapper>
-          <MenuTitle>
-            Choose Your Invocation:
-          </MenuTitle>
-          <PopupButton
-            onClick={null}
-            text={'Mammon, The Golden Wolf'}
-          />
-          <PopupButton
-            onClick={null}
-            text={'Beelzebub, Lord of Flies'}
-          />
-          <PopupButton
-            onClick={null}
-            text={'Hankhill, Asst. Manager'}
-          />
-          <PopupButton
-            onClick={null}
-            text={'Asmodeus, King of Demons'}
           />
         </PopupWrapper>
       );
