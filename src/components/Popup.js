@@ -23,16 +23,6 @@ const PopupWrapper = styled.div`
 
 const Popup = (props) => {
   switch (props.type) {
-    case 'initial': {
-      return (
-        <PopupWrapper>
-          <PopupButton
-            onClick={props.startNextTimer}
-            text={'Begin the Ritual'}
-          />
-        </PopupWrapper>
-      );
-    }
     case 'timer': {
       return (
         <PopupWrapper>
@@ -41,11 +31,23 @@ const Popup = (props) => {
       );
     }
     case 'wait': {
+      let buttonText = '';
+
+      if (props.timerId % 8 === 0) {
+        buttonText = 'Complete the Ritual';
+      } else if (props.timerId % 8 === 1) {
+        buttonText = 'Begin the Ritual';
+      } else if (props.timerId % 2 === 0) {
+        buttonText = 'Gather your Strength';
+      } else {
+        buttonText = 'Continue the Ritual';
+      }
+
       return (
         <PopupWrapper>
           <PopupButton
             onClick={props.startNextTimer}
-            text={'Continue the Ritual'}
+            text={buttonText}
           />
         </PopupWrapper>
       );
@@ -59,6 +61,7 @@ const Popup = (props) => {
 function mapStateToProps(state) {
   return {
     type: state.popup.popupType,
+    timerId: state.timer.timerId,
   };
 }
 

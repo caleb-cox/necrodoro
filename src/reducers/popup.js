@@ -1,7 +1,7 @@
 import { SET_NEXT_TIMER, START_NEXT_TIMER } from '../actions/timer';
 
 const initialState = {
-  popupType: 'initial',
+  popupType: 'wait',
 };
 
 export default function example(state = initialState, action) {

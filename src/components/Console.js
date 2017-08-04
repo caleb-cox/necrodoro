@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import Message from './Message';
 
 const ConsoleWrapper = styled.div`
@@ -19,15 +20,6 @@ const ConsoleWrapper = styled.div`
 `;
 
 class Console extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      messages: [
-        'The black altar awaits...',
-      ],
-    };
-  }
-
   componentDidMount() {
     this.scrollToBottom();
   }
@@ -41,7 +33,7 @@ class Console extends React.Component {
   }
 
   render() {
-    const messages = this.state.messages.map(message => (
+    const messages = this.props.messages.map(message => (
       <Message key={Math.random()}>
         {message}
       </Message>
@@ -55,4 +47,10 @@ class Console extends React.Component {
   }
 }
 
-export default Console;
+function mapStateToProps(state) {
+  return {
+    messages: state.console.messages,
+  };
+}
+
+export default connect(mapStateToProps)(Console);
