@@ -23,24 +23,17 @@ const PopupWrapper = styled.div`
 
 const Popup = (props) => {
   switch (props.type) {
-    case 'timer': {
-      return (
-        <PopupWrapper>
-          <Timer />
-        </PopupWrapper>
-      );
-    }
     case 'wait': {
       let buttonText = '';
 
-      if (props.timerId % 8 === 0) {
-        buttonText = 'Complete the Ritual';
-      } else if (props.timerId % 8 === 1) {
+      if (props.timerId % 8 === 1) {
         buttonText = 'Begin the Ritual';
+      } else if (props.timerId % 8 === 0) {
+        buttonText = 'Complete the Ritual';
       } else if (props.timerId % 2 === 0) {
         buttonText = 'Gather your Strength';
       } else {
-        buttonText = 'Continue the Ritual';
+        buttonText = 'Resume the Ritual';
       }
 
       return (
@@ -49,6 +42,13 @@ const Popup = (props) => {
             onClick={props.startNextTimer}
             text={buttonText}
           />
+        </PopupWrapper>
+      );
+    }
+    case 'timer': {
+      return (
+        <PopupWrapper>
+          <Timer />
         </PopupWrapper>
       );
     }
