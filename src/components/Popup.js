@@ -7,13 +7,11 @@ import PopupButton from './PopupButton';
 import timerActions from '../actions/timer';
 
 const PopupWrapper = styled.div`
-  max-width: 200px;
-  max-height: 200px;
+  width: 150px;
+  height: 75px;
   overflow: hidden;
   background-color: black;
-  padding: 12px;
-  margin-top: 36px;
-  border: 1px solid white;
+  margin-top: 24px;
   box-shadow: 0 0 0 2px black;
   display: flex;
   flex-direction: column;

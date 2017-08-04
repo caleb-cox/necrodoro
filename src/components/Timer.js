@@ -29,7 +29,7 @@ class Timer extends React.Component {
     const start = new Date().getTime();
 
     const timer = () => {
-      const secElapsed = Math.floor((new Date().getTime() - start) / 1);
+      const secElapsed = Math.floor((new Date().getTime() - start) / 1000);
       let secRemaining = this.state.secDuration - secElapsed;
       const minRemaining = Math.floor(secRemaining / 60);
 
