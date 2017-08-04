@@ -14,7 +14,7 @@ const DisplayWrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   image-rendering: pixelated;
 `;
 

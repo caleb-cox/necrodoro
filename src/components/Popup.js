@@ -12,6 +12,7 @@ const PopupWrapper = styled.div`
   overflow: hidden;
   background-color: black;
   padding: 12px;
+  margin-top: 36px;
   border: 1px solid white;
   box-shadow: 0 0 0 2px black;
   display: flex;
